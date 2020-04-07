@@ -1,0 +1,36 @@
+{
+	"name": "elementum-electron",
+	"version": "1.0.0",
+	"description": "Cross-platform electron-powered desktop Elementum app",
+	"keywords": [
+		"elementum",
+		"android-tv",
+		"electron",
+		"macos",
+		"windows",
+		"linux"
+	],
+	"author": "Maxim Shmakov <mvshmakov@mail.ru>",
+	"license": "WTFPL",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/mvshmakov/elementum-electron.git"
+	},
+	"bugs": {
+		"url": "https://github.com/mvshmakov/elementum-electron/issues"
+	},
+	"main": "index.js",
+	"engines": {
+		"node": "12.13.x",
+		"npm": "6.9.x"
+	},
+	"scripts": {
+		"bootstrap": "if [[ -z $ELECTRUM_URL ]]; then (echo \"Specify ELECTRUM_URL (see README.md)\" && exit 1) else (npm i && npm run build ELECTRUM_URL); fi",
+		"build": "node .",
+		"clean": "rm -rf ./bin",
+		"clean:all": "rm -rf ./bin ./node_modules"
+	},
+	"dependencies": {
+		"nativefier": "^8.0.6"
+	}
+}
